@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:input="clr-namespace:Plugin.InputKit.Shared.Controls;assembly=Plugin.InputKit"
+             x:Class="AplicatiePractica.Login"
+             BackgroundColor="GhostWhite">
+
+    <ContentPage.Content>
+        
+        <StackLayout Padding="40" VerticalOptions="Center" HorizontalOptions="FillAndExpand">
+
+                <input:AdvancedEntry
+                        BorderColor="LightGray"
+                        CornerRadius="25"
+                        IconColor="DarkSlateGray"
+                        IconImage="icon_user.png"
+                        Placeholder="Username"
+                        x:Name="txtUsername"
+                        TextColor="Black"
+                        TextFontSize="18" />
+                <input:AdvancedEntry
+                        Margin="0,15,0,30"
+                        BorderColor="LightGray"
+                        CornerRadius="25"
+                        IconColor="DarkSlateGray"
+                        IconImage="icon_lock.png"
+                        IsPassword="True"
+                        Placeholder="Password"
+                        x:Name="txtPassword"
+                        TextColor="Black"
+                        TextFontSize="18" />
+            
+            <Button
+                VerticalOptions="Center"
+                Text="Login"
+                TextColor="GhostWhite"
+                BackgroundColor="Turquoise"
+                BorderColor="Turquoise"
+                BorderWidth="1"
+                CornerRadius="25"
+                Clicked="Button_Clicked"
+                ></Button>
+            
+                <Label HorizontalOptions="Center">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="Not registered? " TextColor="Gray"/>
+                        <Span Text="Create an account" TextColor="Gray" FontAttributes="Bold" TextDecorations="Underline"/>
+                    </FormattedString>
+                </Label.FormattedText>
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                </Label.GestureRecognizers>
+            </Label>
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

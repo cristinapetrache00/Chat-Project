@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:ffimage="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
+             x:Class="AplicatiePractica.Home"
+             BackgroundColor="GhostWhite"
+             Title="{Binding loggedInUsername}">
+
+    <NavigationPage.TitleView>
+        <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+            <Label
+                Margin="0,0,10,0"
+                HorizontalOptions="EndAndExpand"
+                Text="LOG OUT"
+                FontAttributes="Bold"
+                TextColor="GhostWhite">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped0" />
+                </Label.GestureRecognizers>
+            </Label>
+        </StackLayout>
+    </NavigationPage.TitleView>
+    
+    <ListView x:Name="myListView" SeparatorVisibility="None" RowHeight="90" HasUnevenRows="True">
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <StackLayout Margin="0,-10,0,-10" Padding="0,8,0,8">
+            
+                        <StackLayout
+                                    Padding="15,5,15,5"
+                                    BackgroundColor="GhostWhite"
+                                    Orientation="Horizontal">
+                            <StackLayout.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
+                            </StackLayout.GestureRecognizers>
+                            
+                            <ffimage:CachedImage
+                                        Aspect="AspectFill"
+                                        HeightRequest="60"
+                                        HorizontalOptions="Start"
+                                        Source="{Binding ImageUrl}"
+                                        WidthRequest="60">
+                                <ffimage:CachedImage.Transformations>
+                                    <fftransformations:CircleTransformation BorderHexColor="#444444" BorderSize="3"/>
+                                </ffimage:CachedImage.Transformations>
+                            </ffimage:CachedImage>
+
+                            <StackLayout Margin="10,20,2,10" HorizontalOptions="FillAndExpand">
+                                <StackLayout>
+                                    <Label
+                                         FontAttributes="Bold"
+                                         FontSize="18"
+                                         HorizontalOptions="Start"
+                                         Text="{Binding Name}"
+                                         TextColor="Black"
+                                         VerticalTextAlignment="Center"
+                                         HorizontalTextAlignment="Center"/>
+
+                                </StackLayout>
+                            </StackLayout>
+
+                        </StackLayout>
+
+                    </StackLayout>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+</ContentPage>

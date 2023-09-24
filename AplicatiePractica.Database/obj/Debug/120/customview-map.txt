@@ -1,0 +1,2 @@
+resources;obj\Debug\120\res\values\strings.xml
+string;obj\Debug\120\res\values\strings.xml

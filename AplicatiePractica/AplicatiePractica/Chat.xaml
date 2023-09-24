@@ -1,0 +1,173 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AplicatiePractica.Chat"
+             xmlns:input="clr-namespace:Plugin.InputKit.Shared.Controls;assembly=Plugin.InputKit" 
+             BackgroundColor="GhostWhite"
+             >
+    <NavigationPage.TitleView>
+        <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+            <Label
+                Margin="5,10"
+                FontAttributes="Bold"
+                FontSize="18"
+                Text="User Two"
+                TextColor="GhostWhite" />
+        </StackLayout>
+    </NavigationPage.TitleView>
+    <ContentPage.Content>
+
+        <StackLayout>
+
+            <ListView
+                x:Name="lvChat"
+                
+                BackgroundColor="GhostWhite"
+                FlowDirection="RightToLeft"
+                HasUnevenRows="True"
+                SeparatorVisibility="None"
+                VerticalOptions="End">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid>
+                                
+
+                                <Grid>
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="5*" />
+                                            <ColumnDefinition Width="5*" />
+                                        </Grid.ColumnDefinitions>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto" />
+                                            <RowDefinition Height="Auto" />
+                                        </Grid.RowDefinitions>
+
+
+                                        <Grid
+                                            Grid.Row="0"
+                                            Grid.ColumnSpan="2"
+                                            Margin="10,100,0,5"
+                                            Padding="10"
+                                            HorizontalOptions="EndAndExpand"
+                                            VerticalOptions="FillAndExpand">
+
+                                            <Frame
+                                                Margin="0,0,0,0"
+                                                Padding="5"
+                                                BackgroundColor="Turquoise"
+                                                CornerRadius="5"
+                                                HasShadow="True"
+                                                HorizontalOptions="FillAndExpand">
+                                                <StackLayout>
+                                                    <Label
+                                                        Margin="10,5,10,0"
+                                                        FontSize="14"
+                                                        HorizontalTextAlignment="Start"
+                                                        LineBreakMode="CharacterWrap"
+                                                        Text="{Binding TextMessage}"
+                                                        TextColor="#444"
+                                                        VerticalOptions="FillAndExpand" />
+                                                    <Label
+                                                        Margin="10,0,10,5"
+                                                        FontSize="13"
+                                                        LineBreakMode="CharacterWrap"
+                                                        Text="{Binding TimeStamp}"
+                                                        TextColor="#777"
+                                                        VerticalOptions="FillAndExpand" />
+                                                </StackLayout>
+
+                                            </Frame>
+
+                                        </Grid>
+                                    </Grid>
+
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="5*" />
+                                            <ColumnDefinition Width="5*" />
+                                        </Grid.ColumnDefinitions>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto" />
+                                            <RowDefinition Height="Auto" />
+                                        </Grid.RowDefinitions>
+
+
+                                        <Grid
+                                            Grid.Row="0"
+                                            Grid.ColumnSpan="2"
+                                            Margin="5,5,10,0"
+                                            Padding="10"
+                                            HorizontalOptions="Start"
+                                            VerticalOptions="FillAndExpand">
+
+                                            <Frame
+                                                Margin="0,5,0,0"
+                                                Padding="5"
+                                                BackgroundColor="LightGray"
+                                                CornerRadius="5"
+                                                HasShadow="True"
+                                                HorizontalOptions="FillAndExpand">
+                                                <StackLayout>
+                                                    <Label
+                                                        Margin="10,5,10,0"
+                                                        FontSize="14"
+                                                        HorizontalTextAlignment="Start"
+                                                        LineBreakMode="CharacterWrap"
+                                                        Text="{Binding TextMessage}"
+                                                        TextColor="#444"
+                                                        VerticalOptions="FillAndExpand" />
+                                                    <Label
+                                                        Margin="10,0,10,5"
+                                                        FontSize="13"
+                                                        LineBreakMode="CharacterWrap"
+                                                        Text="{Binding TimeStamp}"
+                                                        TextColor="#777"
+                                                        VerticalOptions="FillAndExpand" />
+                                                </StackLayout>
+                                            </Frame>
+                                        </Grid>
+                                    </Grid>
+                                </Grid>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            
+            <StackLayout
+           
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="End"
+                    Padding="10,15,10,15">
+
+                <StackLayout Orientation="Horizontal">
+                    <input:AdvancedEntry
+                            x:Name="TextArea"
+                            Padding="5"
+                            BorderColor="LightGray"
+                            HorizontalOptions="FillAndExpand"
+                            Placeholder="Type Message"
+                            PlaceholderColor="Gray"
+                            TextColor="Black"
+                            VerticalOptions="FillAndExpand">
+                    </input:AdvancedEntry>
+
+                    <ImageButton
+                            Clicked="ImageButton_Clicked"
+                            HeightRequest="45"
+                            HorizontalOptions="Center"
+                            BackgroundColor="Transparent"
+                            Source="icon_send.png"
+                            VerticalOptions="CenterAndExpand"
+                            WidthRequest="45" />
+
+                </StackLayout>
+
+            </StackLayout>
+            
+        </StackLayout>
+        
+    </ContentPage.Content>
+</ContentPage>

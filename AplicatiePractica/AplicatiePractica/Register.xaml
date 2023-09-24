@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:input="clr-namespace:Plugin.InputKit.Shared.Controls;assembly=Plugin.InputKit"
+             x:Class="AplicatiePractica.Register"
+             BackgroundColor="GhostWhite">
+
+    <ContentPage.Content>
+        <StackLayout Padding="40">
+
+            <Label Text="Create your account"
+                VerticalOptions="Start" 
+                HorizontalOptions="Center"
+                TextColor="Turquoise"
+                FontAttributes="Bold"
+                FontSize="Title"/>
+            
+            <Label></Label>
+            <Label></Label>
+            <Label></Label>
+
+            <input:AdvancedEntry
+                        BorderColor="LightGray"
+                        CornerRadius="25"
+                        IconColor="DarkSlateGray"
+                        IconImage="icon_user.png"
+                        Placeholder="Name"
+                        x:Name="txtName"
+                        TextColor="Black"
+                        TextFontSize="18" />
+            <input:AdvancedEntry
+                        Margin="0,10,0,0"
+                        BorderColor="LightGray"
+                        CornerRadius="25"
+                        IconColor="DarkSlateGray"
+                        IconImage="icon_email.png"
+                        Placeholder="Email"
+                        x:Name="txtEmail"
+                        TextColor="Black"
+                        TextFontSize="18" />
+            <input:AdvancedEntry
+                        Margin="0,10,0,0"
+                        BorderColor="LightGray"
+                        CornerRadius="25"
+                        IconColor="DarkSlateGray"
+                        IconImage="icon_lock.png"
+                        IsPassword="True"
+                        Placeholder="Password"
+                        x:Name="txtPassword"
+                        TextColor="Black"
+                        TextFontSize="18" />
+            <input:AdvancedEntry
+                        Margin="0,10,0,0"
+                        BorderColor="LightGray"
+                        CornerRadius="25"
+                        IconColor="DarkSlateGray"
+                        IconImage="icon_lock.png"
+                        IsPassword="True"
+                        x:Name="txtConfirmPassword"
+                        Placeholder="Confirm Password"
+                        TextColor="Black"
+                        TextFontSize="18" />
+
+            <Label></Label>
+            <Label></Label>
+            
+            <Button
+                VerticalOptions="Center"
+                Text="Sign Up"
+                BackgroundColor="Turquoise"
+                BorderColor="Turquoise"
+                TextColor="GhostWhite"
+                BorderWidth="1.5"
+                CornerRadius="25"
+                Clicked="Button_Clicked"
+                ></Button>
+
+            <Button
+                VerticalOptions="Center"
+                Text="Sign In"
+                BackgroundColor="Transparent"
+                BorderColor="Turquoise"
+                TextColor="Turquoise"
+                BorderWidth="1.5"
+                CornerRadius="25"
+                Clicked="Login_Clicked"
+                ></Button>
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
